@@ -59,63 +59,6 @@ Or if installed globally:
 
 **Restart OpenCode** after adding the configuration.
 
-## MCP Tools Available
-
-### 1. `ui_ux_search`
-Search design database (styles, colors, typography, icons, landing, alerts)
-
-```json
-{
-  "query": "SaaS dashboard",
-  "domain": "style|color|typography|icons|landing|alerts",
-  "maxResults": 5
-}
-```
-
-### 2. `ui_ux_generate_design_system`
-Generate complete design system
-
-```json
-{
-  "query": "fintech dashboard",
-  "projectName": "FinApp",
-  "stack": "bootstrap5|react|nextjs|vue|...",
-  "format": "markdown|json"
-}
-```
-
-### 3. `ui_ux_get_stack_guidelines`
-Get tech stack best practices
-
-```json
-{
-  "stack": "bootstrap5|react|nextjs|...",
-  "category": "Layout|Components|...",
-  "maxResults": 10
-}
-```
-
-### 4. `ui_ux_get_icons`
-Search icons (Lucide + Font Awesome)
-
-```json
-{
-  "query": "user profile",
-  "library": "lucide|fontawesome|all",
-  "maxResults": 10
-}
-```
-
-### 5. `ui_ux_get_alerts`
-Search SweetAlert2 patterns
-
-```json
-{
-  "type": "success|error|warning|confirm|...",
-  "maxResults": 5
-}
-```
-
 ## Usage in OpenCode
 
 The MCP server is registered in `~/.config/opencode/opencode.json` and will be available when OpenCode restarts.
