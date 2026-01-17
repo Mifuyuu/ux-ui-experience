@@ -1,6 +1,6 @@
 {
   "name": "ux-ui-experience",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "UX-UI-Experience MCP Server - Design intelligence for OpenCode with Bootstrap 5, Font Awesome, and SweetAlert2",
   "main": "index.js",
   "bin": {

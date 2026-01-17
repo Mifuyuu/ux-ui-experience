@@ -2,7 +2,12 @@
 
 const { Server } = require('@modelcontextprotocol/sdk/server/index.js');
 const { StdioServerTransport } = require('@modelcontextprotocol/sdk/server/stdio.js');
-const { CallToolRequestSchema, ListToolsRequestSchema } = require('@modelcontextprotocol/sdk/types.js');
+const { 
+  CallToolRequestSchema, 
+  ListToolsRequestSchema,
+  ListPromptsRequestSchema,
+  GetPromptRequestSchema 
+} = require('@modelcontextprotocol/sdk/types.js');
 const { search, searchStack } = require('./lib/search');
 const { generateDesignSystem, formatMarkdown } = require('./lib/designSystem');
 
@@ -14,6 +19,7 @@ const server = new Server(
   {
     capabilities: {
       tools: {},
+      prompts: {},
     },
   }
 );
@@ -100,6 +106,60 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
       }
     ]
   };
+});
+
+// Prompts handler - OpenCode will convert these to slash commands
+server.setRequestHandler(ListPromptsRequestSchema, async () => {
+  return {
+    prompts: [
+      {
+        name: 'ux-ui-exp',
+        description: 'UX/UI design assistant with full MCP tool access',
+        arguments: [
+          {
+            name: 'request',
+            description: 'Your design request (e.g., "create fintech dashboard", "find user icons", "show alerts")',
+            required: true
+          }
+        ]
+      }
+    ]
+  };
+});
+
+server.setRequestHandler(GetPromptRequestSchema, async (request) => {
+  const { name, arguments: args } = request.params;
+  
+  if (name === 'ux-ui-exp') {
+    const userRequest = args?.request || '';
+    
+    return {
+      messages: [
+        {
+          role: 'user',
+          content: {
+            type: 'text',
+            text: `${userRequest}
+
+You have access to the ux-ui-experience MCP server with these tools. Use them intelligently based on the request:
+
+**Available MCP Tools:**
+- ux-ui-experience_ui_ux_search - Search designs (domains: style, color, typography, icons, landing, alerts)
+- ux-ui-experience_ui_ux_generate_design_system - Generate complete design system
+- ux-ui-experience_ui_ux_get_stack_guidelines - Get best practices for stacks
+- ux-ui-experience_ui_ux_get_icons - Search icons (Lucide + Font Awesome)
+- ux-ui-experience_ui_ux_get_alerts - Get SweetAlert2 patterns
+
+**Stacks available:** html-tailwind, react, nextjs, vue, svelte, bootstrap5, nuxtjs, shadcn, flutter, swiftui, react-native
+
+Analyze the request and automatically choose which tools to use. Provide actionable design recommendations.`
+          }
+        }
+      ]
+    };
+  }
+  
+  throw new Error(`Unknown prompt: ${name}`);
 });
 
 server.setRequestHandler(CallToolRequestSchema, async (request) => {

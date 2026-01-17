@@ -122,6 +122,23 @@ The MCP server is registered in `~/.config/opencode/opencode.json` and will be a
 
 **To restart OpenCode:** Close and reopen the application.
 
+### Slash Command
+
+The MCP server automatically provides a slash command in OpenCode:
+
+**`/ux-ui-exp [your request]`**
+
+Examples:
+```
+/ux-ui-exp create a fintech dashboard design system
+/ux-ui-exp find icons for user authentication
+/ux-ui-exp show SweetAlert2 confirmation dialogs
+/ux-ui-exp get React best practices for state management
+/ux-ui-exp find color palettes for healthcare apps
+```
+
+The command automatically selects and uses the appropriate MCP tools based on your request.
+
 ## Example Queries
 
 - "Generate design system for a fintech dashboard using Bootstrap 5"
