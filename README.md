@@ -119,3 +119,4 @@ This implementation provides a pure Node.js MCP server that can be easily instal
 ## License
 
 MIT
+
