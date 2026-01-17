@@ -139,6 +139,18 @@ The MCP server is registered in `~/.config/opencode/opencode.json` and will be a
 - csv-parse
 - Custom BM25 search algorithm
 
+## Credits
+
+This project is a **Node.js MCP Server implementation** based on the original **UI-UX-Pro-Max-Skill** by **NextLevelBuilder + Sisyphus**.
+
+Original repository: [ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)
+
+Special thanks to:
+- **NextLevelBuilder** - Original concept and design intelligence framework
+- **Sisyphus** - AI Agent implementation and OpenCode integration
+
+This implementation provides a pure Node.js MCP server that can be easily installed and used with OpenCode and other MCP-compatible clients.
+
 ## License
 
 MIT

@@ -1,10 +1,10 @@
 {
-  "name": "uxui-experience",
+  "name": "ux-ui-experience",
   "version": "1.0.0",
-  "description": "UXUI-Experience MCP Server - Design intelligence for OpenCode with Bootstrap 5, Font Awesome, and SweetAlert2",
+  "description": "UX-UI-Experience MCP Server - Design intelligence for OpenCode with Bootstrap 5, Font Awesome, and SweetAlert2",
   "main": "index.js",
   "bin": {
-    "uxui-experience": "./index.js"
+    "ux-ui-experience": "./index.js"
   },
   "scripts": {
     "start": "node index.js"
@@ -28,15 +28,15 @@
     "vue",
     "svelte"
   ],
-  "author": "NextLevelBuilder + Sisyphus",
+  "author": "Mifuyuu",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YOUR_USERNAME/UXUI-Experience.git"
+    "url": "https://github.com/Mifuyuu/ux-ui-experience.git"
   },
-  "homepage": "https://github.com/YOUR_USERNAME/UXUI-Experience#readme",
+  "homepage": "https://github.com/Mifuyuu/ux-ui-experience#readme",
   "bugs": {
-    "url": "https://github.com/YOUR_USERNAME/UXUI-Experience/issues"
+    "url": "https://github.com/Mifuyuu/ux-ui-experience/issues"
   },
   "files": [
     "index.js",
