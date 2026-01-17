@@ -8,7 +8,7 @@ const { generateDesignSystem, formatMarkdown } = require('./lib/designSystem');
 
 const server = new Server(
   {
-    name: 'uxui-experience',
+    name: 'ux-ui-experience',
     version: '1.0.0',
   },
   {
@@ -165,7 +165,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error('UXUI-Experience MCP Server running on stdio');
+  console.error('ux-ui-experience MCP Server running on stdio');
 }
 
 main().catch(console.error);

@@ -1,6 +1,6 @@
-# UXUI-Experience - Node.js MCP Server
+# ux-ui-experience - Node.js MCP Server
 
-Pure Node.js implementation of UXUI-Experience with Bootstrap 5, Font Awesome, and SweetAlert2 support.
+Pure Node.js implementation of UX-UI-Experience with Bootstrap 5, Font Awesome, and SweetAlert2 support.
 
 ## Features
 
@@ -16,25 +16,28 @@ Pure Node.js implementation of UXUI-Experience with Bootstrap 5, Font Awesome, a
 ### Quick Start (Recommended)
 
 ```bash
-npx uxui-experience@latest
+npx ux-ui-experience@latest
 ```
 
 ### Global Installation
 
 ```bash
-npm install -g uxui-experience
+npm install -g ux-ui-experience
 ```
 
 ### OpenCode Configuration
 
-Add to your OpenCode configuration file (`~/.config/opencode/opencode.json` or `%APPDATA%\opencode\opencode.json` on Windows):
+Add to your OpenCode configuration file:
+- **Windows:** `%APPDATA%\opencode\opencode.json`
+- **Mac/Linux:** `~/.config/opencode/opencode.json`
 
 ```json
 {
-  "mcpServers": {
-    "uxui-experience": {
-      "command": "npx",
-      "args": ["-y", "uxui-experience@latest"]
+  "mcp": {
+    "ux-ui-experience": {
+      "type": "local",
+      "command": ["npx", "-y", "ux-ui-experience@latest"],
+      "enabled": true
     }
   }
 }
@@ -44,9 +47,11 @@ Or if installed globally:
 
 ```json
 {
-  "mcpServers": {
-    "uxui-experience": {
-      "command": "uxui-experience"
+  "mcp": {
+    "ux-ui-experience": {
+      "type": "local",
+      "command": ["ux-ui-experience"],
+      "enabled": true
     }
   }
 }

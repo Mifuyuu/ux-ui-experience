@@ -1,10 +1,10 @@
 {
   "name": "ux-ui-experience",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "UX-UI-Experience MCP Server - Design intelligence for OpenCode with Bootstrap 5, Font Awesome, and SweetAlert2",
   "main": "index.js",
   "bin": {
-    "ux-ui-experience": "./index.js"
+    "ux-ui-experience": "index.js"
   },
   "scripts": {
     "start": "node index.js"
@@ -32,7 +32,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Mifuyuu/ux-ui-experience.git"
+    "url": "git+https://github.com/Mifuyuu/ux-ui-experience.git"
   },
   "homepage": "https://github.com/Mifuyuu/ux-ui-experience#readme",
   "bugs": {
